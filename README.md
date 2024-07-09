@@ -23,8 +23,7 @@ The SupraApp CRUD Application was built for consideration to be given the Z-pref
 |As an *inventory manager*|I want to be able to edit an item |so that I can fix any mistakes I made creating it.|When the user toggles edit mode, the page remains the same, and the fields become editable.|
 |As an *inventory manager*|I want to be able to delete an item|so that I can remove any unwanted content.|When the user deletes the item, they should be redirected to their inventory of items.|
 |As an *inventory manager*|I want to be able to view all items created by every inventory manager |so that I can browse every item.|Unauthenticated users should be able to view all items and any single item.|
-|As a *visitor*, who is not logged in| I want to be able to view all items created by every inventory manager|so that I can browse every item.|Unauthenticated users should be able to view all items and any single item.
-* The items should only display the first 100 characters of its description with “...” at the end if it is longer than 100 characters.|
+|As a *visitor*, who is not logged in| I want to be able to view all items created by every inventory manager|so that I can browse every item.|Unauthenticated users should be able to view all items and any single item. The items should only display the first 100 characters of its description with “...” at the end if it is longer than 100 characters.|
 |As a *visitor*, who is not logged in|I want to be able to view a specific item created by any user|so that I can see all of its details.|Unauthenticated users should be able to view all items and any single item.|
 
 
