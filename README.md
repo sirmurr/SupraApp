@@ -37,6 +37,6 @@ This application utilizes a PERN tech stack consisting of the following:
 * React: A JavaScript library for building user interfaces, which allows developers to create web applications that can update and render efficiently in response to data changes.
 * Node.js: A JavaScript runtime built on Chrome's V8 JavaScript engine.
   
-This reliable combination allows for the use of JavaScript for both the client-side and server-side of your application.
+This reliable combination allows for the use of JavaScript for both the client-side and server-side of the SupraApp.
 
 
