@@ -13,8 +13,7 @@ The SupraApp CRUD Application was built for consideration to be given the Z-pref
 * The database should contain at least two entities, a User and a Item, in a one-to-many relationship, as shown in the ERD below
 * The front-end should be styled to lay out components in a sensible way
 ## User Stories
-* As an inventory manager I want to be able to create an account so that I can track my inventory.
-*   As an inventory manager I want to be able to log into my account so that I can see my inventory of items.
+|**Role**|**Intent**|**Desire**|
 
 
 ## ERD
