@@ -16,7 +16,7 @@ The SupraApp CRUD Application was built for consideration to be given the Z-pref
 |**Role**|**Intent**|**Desire**|**Notes**|
 | -------- | ------- | -------- | -------- |
 |As an *inventory manager*|I want to be able to create an account|so that I can track my inventory.| |
-|As an *inventory manager*|I want to be able to log into my account|so that I can track my inventory.|After logging in, the inventory manager should be redirected to their inventory of items.|
+|As an *inventory manager*|I want to be able to log into my account|so that I can track my inventory.|* After logging in, the inventory manager should be redirected to their inventory of items.|
 |As an *inventory manager*|blah|blah|blah|
 |As an *inventory manager*|blah|blah|blah|
 |As an *inventory manager*|blah|blah|blah|
