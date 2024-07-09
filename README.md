@@ -14,6 +14,7 @@ The SupraApp CRUD Application was built for consideration to be given the Z-pref
 * The front-end should be styled to lay out components in a sensible way
 ## User Stories
 |**Role**|**Intent**|**Desire**|
+|blah|blah|blah|
 
 
 ## ERD
