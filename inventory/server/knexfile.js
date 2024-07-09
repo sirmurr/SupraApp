@@ -7,11 +7,14 @@ module.exports = {
   development: {
     client: "pg",
     connection: {
-      host: "127.0.0.1",
-      password: "docker",
+      host: "172.18.0.2",
       user: "postgres",
-      port: 5432,
+      password: "docker",
       database: "itemsinventory",
+    },
+    pool: {
+      min: 1,
+      max: 20,
     },
   },
 

@@ -11,7 +11,16 @@ app.get("/", (req, res) => {
   res.send("Application up and running!");
 });
 
-app.get("/item", (req, res) => {
+app.get("/test-db", async (req, res) => {
+  try {
+    const result = await knex.raw("SELECT 1+1 AS result");
+    res.status(200).json(result.rows);
+  } catch (err) {
+    res.status(500).json({ message: "Database connection failed", error: err });
+  }
+});
+
+app.get("/items", (req, res) => {
   knex("items")
     .select("*")
     .then((data) => res.status(200).json(data))
