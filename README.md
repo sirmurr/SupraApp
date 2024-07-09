@@ -31,4 +31,11 @@ The SupraApp CRUD Application was built for consideration to be given the Z-pref
 ![image](https://github.com/sirmurr/SupraApp/assets/168887360/43dcd9fb-3d5d-4065-9456-538efe084fca)
 
 ## Tech Stack
-PERN
+This application utilizes a PERN tech stack consisting of the following:
+* PostgreSQL: An open-source object-relational database system.
+* Express.js: A minimalist web framework for Node.js, used for building web applications and APIs.
+* React: A JavaScript library for building user interfaces, which allows developers to create web applications that can update and render efficiently in response to data changes.
+* Node.js: A JavaScript runtime built on Chrome's V8 JavaScript engine.
+This reliable combination allows for the use of JavaScript for both the client-side and server-side of your application.
+
+
