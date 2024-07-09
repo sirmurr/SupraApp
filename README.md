@@ -27,8 +27,12 @@ The SupraApp CRUD Application was built for consideration to be given the Z-pref
 |As a *visitor*, who is not logged in|I want to be able to view a specific item created by any user|so that I can see all of its details.|Unauthenticated users should be able to view all items and any single item.|
 
 
-## ERD
+## Database
+### ERD
 ![image](https://github.com/sirmurr/SupraApp/assets/168887360/43dcd9fb-3d5d-4065-9456-538efe084fca)
+### Created Tables in psql
+![image](https://github.com/sirmurr/SupraApp/assets/168887360/9cb4c14a-0c85-4183-b267-d0934596ca6d)
+
 
 ## Tech Stack
 This application utilizes a PERN tech stack consisting of the following:
