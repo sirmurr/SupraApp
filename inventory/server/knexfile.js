@@ -7,7 +7,8 @@ module.exports = {
   development: {
     client: "pg",
     connection: {
-      host: "172.18.0.2",
+      host: "172.19.0.2", // Use the IP address of server-db-1
+      port: "5432",
       user: "postgres",
       password: "docker",
       database: "itemsinventory",

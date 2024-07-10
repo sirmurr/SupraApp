@@ -20,18 +20,6 @@ app.get("/test-db", async (req, res) => {
   }
 });
 
-app.get("/items", (req, res) => {
-  knex("items")
-    .select("*")
-    .then((data) => res.status(200).json(data))
-    .catch((err) =>
-      res.status(404).json({
-        message:
-          "The data you are looking for could not be found. Please try again",
-      })
-    );
-});
-
 app.listen(port, () => {
   console.log(`The server is running on ${port}`);
 });
