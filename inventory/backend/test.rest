@@ -1,0 +1,16 @@
+### Creates Table
+GET http://localhost:13000/setup
+
+### Gets Table
+GET http://localhost:13000
+
+### Fills Table
+POST http://localhost:13000
+Content-Type: application/json
+
+{
+  "name":"James",
+  "location": "123 hello world street"
+}
+
+###
