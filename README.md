@@ -67,6 +67,8 @@ This reliable combination allows for the use of JavaScript for both the client-s
 
 2. <docker system prune> _optional_
 
-3. <docker build -t my-node-app>
+build that thang
+
+3. <docker build -t my-node-app .>
 
 4. <docker-compose up> \*test get request localhost:13000 (or /test-db)
