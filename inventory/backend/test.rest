@@ -1,3 +1,6 @@
+### Test-db connection
+GET http://localhost:13000/test-db
+
 ### Creates Table
 GET http://localhost:13000/setup
 
