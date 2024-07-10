@@ -1,19 +1,35 @@
 ### Test-db connection
 GET http://localhost:13000/test-db
 
-### Creates Table
+### Creates Items and Users Tables
 GET http://localhost:13000/setup
 
-### Gets Table
-GET http://localhost:13000
+### Gets 'users' Table
+GET http://localhost:13000/users
 
-### Fills Table
-POST http://localhost:13000
+### Gets 'items' Table
+GET http://localhost:13000/items
+
+### Instance of Users Table
+POST http://localhost:13000/users
 Content-Type: application/json
 
 {
-  "name":"James",
-  "location": "123 hello world street"
+  "firstname": "Mark",
+  "lastname": "Matthews",
+  "username": "Marky Mark",
+  "password": "pw1234"
+}
+
+### Instance of Items Table
+POST http://localhost:13000/items
+Content-Type: application/json
+
+{
+  "users_id":1,
+  "itemname": "Shredded Lettuce",
+  "description": "yum yum crunchy for your smashburger",
+  "quantity": 234
 }
 
 ###
