@@ -1,14 +1,13 @@
 ### Test-db connection
 GET http://localhost:13000/test-db
 
+//NEEDS TO HAPPEN ON STARTUP OF APP -----------------
 ### Creates Items and Users Tables
 GET http://localhost:13000/setup
 
+//USERS TESTS ---------------------------------------
 ### Gets 'users' Table
 GET http://localhost:13000/users
-
-### Gets 'items' Table
-GET http://localhost:13000/items
 
 ### Instance of Users Table
 POST http://localhost:13000/users
@@ -20,6 +19,10 @@ Content-Type: application/json
   "username": "Marky Mark",
   "password": "pw1234"
 }
+
+//ITEMS TESTS ---------------------------------------
+### Gets 'items' Table
+GET http://localhost:13000/items
 
 ### Instance of Items Table
 POST http://localhost:13000/items

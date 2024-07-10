@@ -1,0 +1,39 @@
+{
+  "firstname": "Frank",
+  "lastname": "Martin",
+  "username": "martymart",
+  "password": "password1"
+}
+{
+  "firstname": "Sasha",
+  "lastname": "Grayson",
+  "username": "sashy1234",
+  "password": "password2",
+},
+{
+  "firstname": "Kevin",
+  "lastname": "Murray",
+  "username": "sirmurr",
+  "password": "password3",
+}
+
+{
+  "users_id": 3,
+  "itemname": "Table Salt",
+  "description": "makes that bland meal just a bit tastier",
+  "quantity": 10,
+},
+{
+  "users_id": 3,
+  "itemname": "Chili Flakes",
+  "description": "Hot. Use with caution",
+  "quantity": 10,
+},
+{
+  "users_id": 3,
+  "itemname": "Coconut Water",
+  "description": "nature's gatorade",
+  "quantity": 10,
+},
+
+
