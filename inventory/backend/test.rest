@@ -23,19 +23,19 @@ Content-Type: application/json
 GET http://localhost:13000/users/1
 
 ### Update item by ID
-PUT http://localhost:13000/users/1
+PUT http://localhost:13000/users/2
 Content-Type: application/json
 
 {
   "firstname": "Matt",
   "lastname": "Markhews",
-  "username": "MattyMatt",
+  "username": "BlahBlah",
   "password": "pw1234"
 }
 
 
 ### Delete item by ID
-DELETE http://localhost:13000/users/1
+DELETE http://localhost:13000/users/2
 
 
 
@@ -56,10 +56,10 @@ Content-Type: application/json
 }
 
 ### Gets single item by ID
-GET http://localhost:13000/items/1
+GET http://localhost:13000/items/3
 
 ### Update item by ID
-PUT http://localhost:13000/items/1
+PUT http://localhost:13000/items/3
 Content-Type: application/json
 
 {
@@ -70,4 +70,4 @@ Content-Type: application/json
 }
 
 ### Delete item by ID
-DELETE http://localhost:13000/items/1
+DELETE http://localhost:13000/items/2

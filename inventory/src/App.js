@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 //API start up
-import Api from "./api";
+import Api from "./Api";
 
 //Components
 import Login from "./Login";

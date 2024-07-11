@@ -80,3 +80,5 @@ build that thang
 ## Known bugs
 
 - if you refresh the app, it will send initial posts again, duplicating data
+- get specific user with id that doesnt exist, no error message need if (!user)
+- user put (user not found), but does update successfully, sends wrong message, item put works correctly

@@ -18,6 +18,26 @@ app.get("/test-db", async (req, res) => {
   }
 });
 
+//SETUP OF SERVER DO NOT DELETE silly kevin
+app.get("/setup", async (req, res) => {
+  try {
+    // Creation of 'users' table
+    await pool.query(
+      "CREATE TABLE users(id SERIAL PRIMARY KEY, firstname VARCHAR(100), lastname VARCHAR(100), username VARCHAR(100), password VARCHAR(100))"
+    );
+    // Creatoin of 'items' table
+    await pool.query(
+      "CREATE TABLE items(id SERIAL PRIMARY KEY, users_id INT, itemname VARCHAR(100), description VARCHAR(250), quantity INT)"
+    );
+    res
+      .status(200)
+      .send({ message: "Successfully created users and items tables" });
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
+});
+
 //USERS ROUTES ------------------------------------------------------
 //GET entire list of users
 app.get("/users", async (req, res) => {
