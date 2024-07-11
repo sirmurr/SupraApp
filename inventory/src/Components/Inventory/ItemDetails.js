@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ItemDetails.css";
 
 function ItemDetails(props) {
-  // const isVisitor = props.isVisitor; NEED FOR EDIT MODE LATER
+  const isVisitor = props.isVisitor;
   const item = props.selectedItem;
   const onClose = props.onClose;
 
@@ -15,9 +15,13 @@ function ItemDetails(props) {
   return (
     <div className="item-details-overlay">
       <div className="item-details">
-        <button className="edit-button" onClick={toggleEditMode}>
-          {editMode ? "Enable Edit Mode" : "Disable Edit Mode"}
-        </button>
+        {!isVisitor && (
+          <>
+            <button className="edit-button" onClick={toggleEditMode}>
+              {editMode ? "Enable Edit Mode" : "Disable Edit Mode"}
+            </button>
+          </>
+        )}
         <button className="close-button" onClick={onClose}>
           X
         </button>

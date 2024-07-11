@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InventoryHeader from "./Components/Inventory/InventoryHeader";
 import InventoryCommands from "./Components/Inventory/InventoryCommands";
 import ItemList from "./Components/Inventory/ItemList";
@@ -10,11 +10,13 @@ import "./Inventory.css";
 function Inventory() {
   const location = useLocation();
   const [selectedItem, setSelectedItem] = useState(null);
-  const isVisitor = location.state?.isVisitor || false;
+  const isVisitor = false; //= location.state?.isVisitor || false; undo once login is made
+  const [allItems, setAllItems] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
+  const [error, setError] = useState(null);
 
   // filled item field to reflect selection
   const handleSelectItem = (item) => {
-    console.log("Selected Item: ", item);
     setSelectedItem(item);
   };
 
@@ -23,7 +25,7 @@ function Inventory() {
     setSelectedItem(null);
   };
 
-  const makeFetch = (url, options) => {
+  const makeFetch = async (url, options) => {
     /////Example URL
     // http://localhost:13000/users
 
@@ -35,25 +37,41 @@ function Inventory() {
     //   },
     //   body: JSON.stringify(jsonData) // Convert JSON data to a string and set it as the request body
     // };
-
-    fetch(url, options)
-      .then((response) => {
-        // Check if the request was successful
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        // Parse the response as JSON
-        return response.json();
-      })
-      .then((data) => {
-        // Handle the JSON data
-        console.log(data);
-      })
-      .catch((error) => {
-        // Handle any errors that occurred during the fetch
-        console.error("Fetch error:", error);
-      });
+    try {
+      const response = await fetch(url, options);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Fetch error:", error);
+      setError(error.message);
+    }
   };
+
+  useEffect(() => {
+    // Initial Fetches
+    const fetchData = async () => {
+      const fetchedItems = await makeFetch("http://localhost:13000/items");
+      const fetchedUsers = await makeFetch("http://localhost:13000/users");
+      setAllItems(fetchedItems || []);
+      setAllUsers(fetchedUsers || []);
+    };
+
+    fetchData();
+  }, []);
+
+  const fetchAll = async () => {
+    const fetchedItems = await makeFetch("http://localhost:13000/items");
+    const fetchedUsers = await makeFetch("http://localhost:13000/users");
+    setAllItems(fetchedItems || []);
+    setAllUsers(fetchedUsers || []);
+  };
+
+  // if (error) {
+  //   return <div>Error: {error}</div>;
+  // }
 
   // Dummy Data
   const allItemsDummy = [
@@ -82,11 +100,11 @@ function Inventory() {
     <div className="inventory">
       <InventoryHeader isVisitor={isVisitor} />
       <div className="main-content">
-        <InventoryCommands isVisitor={isVisitor} />
+        <InventoryCommands isVisitor={isVisitor} fetchAll={fetchAll} />
         <ItemList
           isVisitor={isVisitor}
           onSelectItem={handleSelectItem}
-          allItemsDummy={allItemsDummy}
+          allItems={allItems}
         />
       </div>
       {selectedItem && (
