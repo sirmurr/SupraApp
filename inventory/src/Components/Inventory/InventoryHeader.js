@@ -1,13 +1,13 @@
 import React from "react";
+import "./InventoryHeader.css";
 
 function InventoryHeader(props) {
-  const isVisitor = props.visitor;
+  const isVisitor = props.isVisitor;
 
   return (
-    <div>
-      <h2>HEADER INfo</h2>
+    <div className="inventory-header">
       <h2>Inventory Application</h2>
-      <p>Logo maybe?</p>
+      <p>{isVisitor ? "Visitor Mode" : "Manager Mode"}</p>
     </div>
   );
 }

@@ -1,0 +1,19 @@
+.inventory-header {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #c7dff6;
+  border-bottom: 1px solid #56a1eb;
+}
+
+.inventory-header h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.inventory-header p {
+  font-size: 1em;
+  margin: 0;
+}

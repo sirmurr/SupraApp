@@ -58,7 +58,7 @@ app.get("/users/:id", async (req, res) => {
     const user = await pool.query("SELECT * FROM users WHERE id = $1 LIMIT 1", [
       userId,
     ]);
-    if (!user) {
+    if (user.length === 0) {
       return res.status(404).send("User not found");
     }
     res.json(user.rows[0]);

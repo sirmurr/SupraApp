@@ -1,0 +1,47 @@
+.inventory-commands {
+  height: calc(90vh - 1px); /* 10% for the header and adjust for border */
+  width: 200px; /* Adjust width as needed */
+  background-color: #f1f1f1;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #dee2e6;
+}
+
+/* Example of customizing Collapsible with Foundation classes */
+.Collapsible {
+  margin-bottom: 20px; /* Example margin */
+}
+
+.Collapsible__trigger {
+  background-color: #f1f1f1;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.Collapsible__trigger.is-open {
+  background-color: #c7dff6;
+}
+
+.Collapsible__contentOuter {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.Collapsible__contentInner {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* Example of disabling trigger */
+.Collapsible__trigger.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

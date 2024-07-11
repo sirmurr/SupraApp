@@ -1,20 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import "./ItemDetails.css";
 
 function ItemDetails(props) {
-  const isVisitor = props.visitor;
+  // const isVisitor = props.isVisitor; NEED FOR EDIT MODE LATER
+  const item = props.selectedItem;
+  const onClose = props.onClose;
+
+  const [editMode, setEditMode] = useState(false);
+
+  const toggleEditMode = () => {
+    setEditMode((previousMode) => !previousMode);
+  };
+
   return (
-    <div>
-      <h2>Item DEatils</h2>
-      <p>section hidden until an item is selected</p>
-      <h3>EDIT Mode Toggle</h3>
-      <h1>|X|</h1>
-      <h2>Some ITEM</h2>
-      <p>Item Name: Lettuce</p>
-      <p>Quantity: 434</p>
-      <p>
-        Desc: mmmhmhmmhmhm so wet and crunchy, try with ceaser dressing or on a
-        burger
-      </p>
+    <div className="item-details-overlay">
+      <div className="item-details">
+        <button className="edit-button" onClick={toggleEditMode}>
+          {editMode ? "Enable Edit Mode" : "Disable Edit Mode"}
+        </button>
+        <button className="close-button" onClick={onClose}>
+          X
+        </button>
+        <h2>{item.itemname}</h2>
+        <h3>Quantity: {item.quantity}</h3>
+        <p>{item.description}</p>
+      </div>
     </div>
   );
 }

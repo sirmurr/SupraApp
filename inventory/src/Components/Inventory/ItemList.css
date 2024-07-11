@@ -1,6 +1,27 @@
-.List {
+/* .List {
   float: right;
   width: 79%;
   border-color: blue;
   border-radius: 1px;
+} */
+
+.item-list {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.item-pane {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.item-pane:hover {
+  background-color: #f0f0f0;
+}
+
+.item-pane h3 {
+  text-align: left;
 }

@@ -1,14 +1,26 @@
 import React from "react";
+import "./ItemList.css";
 
 function ItemList(props) {
-  const isVisitor = props.visitor;
+  const { isVisitor, onSelectItem, allItemsDummy } = props;
+
   return (
-    <div className="List">
+    <div className="item-list">
       <h2>Item List</h2>
-      <h2>Inventory Application</h2>
-      <p>Big ol table of items, somehow filter with filter tab</p>
-      <p>Itemname, Desc, Manager</p>
-      <p>Item is clickable, pulls that items detail page</p>
+      <div>
+        {allItemsDummy.map((item) => (
+          <div
+            className="item-pane"
+            key={item.id}
+            onClick={() => {
+              onSelectItem(item);
+              console.log("Item clicked:", item); // Debugging log
+            }}
+          >
+            <h3>{item.itemname}</h3>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
