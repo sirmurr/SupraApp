@@ -2,7 +2,7 @@ import React from "react";
 import "./ItemList.css";
 
 function ItemList(props) {
-  const { isVisitor, onSelectItem, allItems } = props;
+  const { isVisitor, onSelectItem, allItems, allUsers } = props;
 
   return (
     <div className="item-list">

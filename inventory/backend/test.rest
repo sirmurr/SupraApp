@@ -23,12 +23,12 @@ Content-Type: application/json
 GET http://localhost:13000/users/1
 
 ### Update item by ID
-PUT http://localhost:13000/users/2
+PUT http://localhost:13000/users/3
 Content-Type: application/json
 
 {
   "firstname": "Matt",
-  "lastname": "Markhews",
+  "lastname": "Markddddddhews",
   "username": "BlahBlah",
   "password": "pw1234"
 }

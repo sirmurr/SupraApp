@@ -73,38 +73,20 @@ function Inventory() {
   //   return <div>Error: {error}</div>;
   // }
 
-  // Dummy Data
-  const allItemsDummy = [
-    {
-      users_id: 3,
-      itemname: "Table Salt",
-      description: "makes that bland meal just a bit tastier",
-      quantity: 10,
-    },
-    {
-      users_id: 3,
-      itemname: "Chili Flakes",
-      description: "Hot. Use with caution",
-      quantity: 10,
-    },
-    {
-      users_id: 3,
-      itemname: "Coconut Water",
-      description: "nature's gatorade",
-      quantity: 10,
-    },
-    // Add more items here
-  ];
-
   return (
     <div className="inventory">
       <InventoryHeader isVisitor={isVisitor} />
       <div className="main-content">
-        <InventoryCommands isVisitor={isVisitor} fetchAll={fetchAll} />
+        <InventoryCommands
+          isVisitor={isVisitor}
+          fetchAll={fetchAll}
+          allUsers={allUsers}
+        />
         <ItemList
           isVisitor={isVisitor}
           onSelectItem={handleSelectItem}
           allItems={allItems}
+          allUsers={allUsers}
         />
       </div>
       {selectedItem && (
