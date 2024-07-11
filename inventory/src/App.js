@@ -5,10 +5,17 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+
+//API start up
+import Api from "./api";
+
+//Components
 import Login from "./Login";
 import Inventory from "./Inventory";
 
 import "./App.css";
+
+Api();
 
 function App() {
   return (
@@ -23,31 +30,3 @@ function App() {
 }
 
 export default App;
-
-// //minimal app
-// import React from "react";
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-//   Navigate,
-// } from "react-router-dom";
-// import MinimalComponent from "./MinimalComponent";
-// require("react-dom");
-// window.React2 = require("react");
-// console.log(window.React1 === window.React2);
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Router>
-//         <Routes>
-//           <Route path="/" element={<Navigate to="/minimal" replace />} />
-//           <Route path="/minimal" element={<MinimalComponent />} />
-//         </Routes>
-//       </Router>
-//     </div>
-//   );
-// }
-
-// export default App;

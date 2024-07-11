@@ -72,3 +72,11 @@ build that thang
 3. <docker build -t my-node-app .>
 
 4. <docker-compose up> \*test get request localhost:13000 (or /test-db)
+
+### React app
+
+5. in SupraApp/inventory run <npm start>
+
+## Known bugs
+
+- if you refresh the app, it will send initial posts again, duplicating data
