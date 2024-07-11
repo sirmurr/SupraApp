@@ -1,10 +1,9 @@
 ### Test-db connection
 GET http://localhost:13000/test-db
 
-//NEEDS TO HAPPEN ON STARTUP OF APP -----------------
-### Creates Items and Users Tables
-GET http://localhost:13000/setup
 
+
+//-------------------------------------
 //USERS TESTS ---------------------------------------
 ### Gets 'users' Table
 GET http://localhost:13000/users
@@ -16,10 +15,31 @@ Content-Type: application/json
 {
   "firstname": "Mark",
   "lastname": "Matthews",
-  "username": "Marky Mark",
+  "username": "MarkyMark",
   "password": "pw1234"
 }
 
+### Gets single item by ID
+GET http://localhost:13000/users/1
+
+### Update item by ID
+PUT http://localhost:13000/users/1
+Content-Type: application/json
+
+{
+  "firstname": "Matt",
+  "lastname": "Markhews",
+  "username": "MattyMatt",
+  "password": "pw1234"
+}
+
+
+### Delete item by ID
+DELETE http://localhost:13000/users/1
+
+
+
+//-------------------------------------
 //ITEMS TESTS ---------------------------------------
 ### Gets 'items' Table
 GET http://localhost:13000/items
@@ -35,4 +55,19 @@ Content-Type: application/json
   "quantity": 234
 }
 
-###
+### Gets single item by ID
+GET http://localhost:13000/items/1
+
+### Update item by ID
+PUT http://localhost:13000/items/1
+Content-Type: application/json
+
+{
+  "users_id": 1,
+  "itemname": "Updated Shredded Lettuce",
+  "description": "New description for shredded lettuce",
+  "quantity": 300
+}
+
+### Delete item by ID
+DELETE http://localhost:13000/items/1
