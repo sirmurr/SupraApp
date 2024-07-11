@@ -23,6 +23,7 @@ function Inventory() {
   // clears item field, in turn closing details
   const handleCloseItemDetails = () => {
     setSelectedItem(null);
+    fetchAll();
   };
 
   const makeFetch = async (url, options) => {
@@ -94,6 +95,7 @@ function Inventory() {
           isVisitor={isVisitor}
           selectedItem={selectedItem}
           onClose={handleCloseItemDetails}
+          fetchAll={fetchAll}
         />
       )}
     </div>

@@ -1,6 +1,14 @@
 import React from "react";
 import "./ItemList.css";
 
+function truncateText(text, maxLength) {
+  if (text.length > maxLength) {
+    return text.substring(0, maxLength) + "...";
+  } else {
+    return text;
+  }
+}
+
 function ItemList(props) {
   const { isVisitor, onSelectItem, allItems, allUsers } = props;
 
@@ -16,6 +24,10 @@ function ItemList(props) {
               onClick={() => onSelectItem(item)}
             >
               <h3>{item.itemname}</h3>
+              <p>
+                Item Id: {item.id}, Quantity: {item.quantity}
+              </p>
+              <p>Description: {truncateText(item.description, 100)}</p>
             </div>
           ))
         ) : (
