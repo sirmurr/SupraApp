@@ -1,8 +1,9 @@
 import React from "react";
 
-function ItemList() {
+function ItemList(props) {
+  const isVisitor = props.visitor;
   return (
-    <div>
+    <div className="List">
       <h2>Item List</h2>
       <h2>Inventory Application</h2>
       <p>Big ol table of items, somehow filter with filter tab</p>

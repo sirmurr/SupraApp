@@ -1,6 +1,8 @@
 import React from "react";
 
-function InventoryHeader() {
+function InventoryHeader(props) {
+  const isVisitor = props.visitor;
+
   return (
     <div>
       <h2>HEADER INfo</h2>

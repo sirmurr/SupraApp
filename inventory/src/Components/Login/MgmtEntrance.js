@@ -2,11 +2,19 @@ import React from "react";
 
 function MgmtEntrance() {
   return (
-    <div>
+    <div className="mgmt-container">
       <h2>Inventory Manager Login</h2>
-      <p>Username: _________</p>
-      <p>Password: _________</p>
-      <p>LOGIN BUTTON</p>
+      <form>
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username"></input>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password"></input>
+        </div>
+        <button type="submit">Login</button>
+      </form>
     </div>
   );
 }

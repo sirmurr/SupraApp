@@ -1,6 +1,7 @@
 import React from "react";
 
-function InventoryFilter() {
+function InventoryFilter(props) {
+  const isVisitor = props.visitor;
   return (
     <div>
       <h2>Filter Inventory</h2>

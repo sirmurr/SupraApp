@@ -1,0 +1,6 @@
+.visitor-container {
+  border: 1px solid #000;
+  padding: 20px;
+  width: 40%;
+  box-sizing: border-box;
+}

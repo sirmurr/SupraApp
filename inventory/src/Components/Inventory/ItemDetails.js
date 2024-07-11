@@ -1,6 +1,7 @@
 import React from "react";
 
-function ItemDetails() {
+function ItemDetails(props) {
+  const isVisitor = props.visitor;
   return (
     <div>
       <h2>Item DEatils</h2>

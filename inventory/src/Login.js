@@ -4,10 +4,13 @@ import MgmtEntrance from "./Components/Login/MgmtEntrance";
 
 function Login() {
   return (
-    <div className="Login">
-      <h1 className="LoginTitle">Inventory Management Application</h1>
-      <VisitorEntrance />
-      <MgmtEntrance />
+    <div className="login-page">
+      <h1 className="login-title">Inventory Management Application</h1>
+
+      <div className="login-container">
+        <VisitorEntrance />
+        <MgmtEntrance />
+      </div>
     </div>
   );
 }
