@@ -75,7 +75,19 @@ build that thang
 
 ### React app
 
-5. in SupraApp/inventory run <npm start>
+5. in SupraApp/inventory run <npm start> \*should navigate automatically to localhost:13000
+
+### Starter User Profiles to Use on Login
+
+firstname: "Mark",
+lastname: "Matthews",
+username: "MarkyMark1",
+password: "pw1",
+
+firstname: "Sasha",
+lastname: "Nevins",
+username: "princess2",
+password: "pw2",
 
 ## Known bugs
 
