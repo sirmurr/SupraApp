@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import EditItem from "./DetailComp/EditItem.js";
 import "./ItemDetails.css";
 
 function ItemDetails(props) {
@@ -31,7 +32,7 @@ function ItemDetails(props) {
         {!isVisitor && (
           <>
             <button className="edit-button" onClick={toggleEditMode}>
-              {editMode ? "Enable Edit Mode" : "Disable Edit Mode"}
+              {editMode ? "Disable Edit Mode" : "Enable Edit Mode"}
             </button>
           </>
         )}
@@ -41,9 +42,28 @@ function ItemDetails(props) {
         <button className="delete-item-button" onClick={onDelete}>
           Delete Item
         </button>
-        <h2>{item.itemname}</h2>
-        <h3>Quantity: {item.quantity}</h3>
-        <p>{item.description}</p>
+        <div>
+          {!editMode ? (
+            <div className="view-mode">
+              <h2>{item.itemname}</h2>
+              <p>
+                <b>Item Id:</b> {item.id} <b>Created By User Id:</b>{" "}
+                {item.users_id}
+              </p>
+              <h3>Quantity: {item.quantity}</h3>
+              <p>Description: {item.description}</p>{" "}
+            </div>
+          ) : (
+            <div className="edit-mode">
+              <h2>Edit Item: {item.itemname}</h2>
+              <EditItem
+                fetchAll={fetchAll}
+                onClose={onClose}
+                itemId={item.id}
+              />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
