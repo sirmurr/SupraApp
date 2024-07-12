@@ -18,12 +18,16 @@ import "./App.css";
 Api();
 
 function App() {
+  let isVisitor = true;
   return (
     <div className="app">
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/inventory" element={<Inventory />} />
+        <Route path="/login" element={<Login isVisitor={isVisitor} />} />
+        <Route
+          path="/inventory"
+          element={<Inventory isVisitor={isVisitor} />}
+        />
       </Routes>
     </div>
   );

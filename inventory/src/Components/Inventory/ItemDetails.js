@@ -39,9 +39,13 @@ function ItemDetails(props) {
         <button className="close-button" onClick={onClose}>
           X
         </button>
-        <button className="delete-item-button" onClick={onDelete}>
-          Delete Item
-        </button>
+        {!isVisitor && (
+          <>
+            <button className="delete-item-button" onClick={onDelete}>
+              Delete Item
+            </button>
+          </>
+        )}
         <div>
           {!editMode ? (
             <div className="view-mode">

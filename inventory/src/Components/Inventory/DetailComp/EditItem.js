@@ -10,7 +10,6 @@ function EditItem(props) {
   const [id, setId] = useState("");
 
   const handleSubmit = async (event) => {
-    console.log(props.itemId);
     event.preventDefault(); // Prevents the default form submission behavior
 
     const item = {

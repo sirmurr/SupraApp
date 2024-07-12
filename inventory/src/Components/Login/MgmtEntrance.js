@@ -1,37 +1,43 @@
-// import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-// function MgmtEntrance() {
-//   return (
-//     <div className="mgmt-container">
-//       <h2>Inventory Manager Login</h2>
-//       <form>
-//         <div>
-//           <label for="username">Username:</label>
-//           <input type="text" id="username" name="username"></input>
-//         </div>
-//         <div>
-//           <label for="password">Password:</label>
-//           <input type="password" id="password" name="password"></input>
-//         </div>
-//         <button type="submit">Login</button>
-//       </form>
-//     </div>
-//   );
-// }
+function MgmtEntrance(props) {
+  const navigate = useNavigate();
 
-// export default MgmtEntrance;
-
-import React, { useState } from "react";
-
-function MgmtEntrance() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [profiles, setProfiles] = useState("");
+
+  useEffect(() => {
+    // Fetch profiles from the API
+    const fetchProfiles = async () => {
+      try {
+        const response = await fetch("http://localhost:13000/users");
+        const data = await response.json();
+        setProfiles(data);
+      } catch (error) {
+        console.error("Error fetching initial users:", error);
+      }
+    };
+
+    fetchProfiles();
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission
 
     //LOGIN LOGIC HERE
-    //if user/pass combo exist, let in no visitor mode
+    const user = profiles.find(
+      (profile) =>
+        profile.username === username && profile.password === password
+    );
+    if (user) {
+      setError(""); // Clear any previous error
+      navigate("/inventory", { state: { isVisitor: false } });
+    } else {
+      setError("Invalid username or password. Please try again.");
+    }
   };
 
   const handleUsernameChange = (event) => {
@@ -69,6 +75,7 @@ function MgmtEntrance() {
           />
         </div>
         <button type="submit">Login</button>
+        {error && <p className="error">{error}</p>}
       </form>
     </div>
   );

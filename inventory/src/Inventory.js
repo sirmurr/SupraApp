@@ -10,7 +10,7 @@ import "./Inventory.css";
 function Inventory() {
   const location = useLocation();
   const [selectedItem, setSelectedItem] = useState(null);
-  const isVisitor = false; //= location.state?.isVisitor || false; undo once login is made
+  const isVisitor = location.state?.isVisitor || false;
   const [allItems, setAllItems] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
   const [error, setError] = useState(null);
