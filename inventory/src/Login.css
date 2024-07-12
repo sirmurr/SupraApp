@@ -18,7 +18,7 @@ h1 {
 
 .login-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   border: 1px solid #000;
   padding: 20px;
