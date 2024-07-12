@@ -65,17 +65,17 @@ This reliable combination allows for the use of JavaScript for both the client-s
 
 ### SERVER
 
-2. <docker system prune> _optional_
+2. Open Docker Desktop
 
-build that thang
+3. <docker system prune> _optional_
 
-3. <docker build -t my-node-app .>
+4. <docker build -t my-node-app .>
 
-4. <docker-compose up> \*test get request localhost:13000 (or /test-db)
+5. <docker-compose up> \*test get request localhost:13000 (or /test-db)
 
 ### React app
 
-5. in SupraApp/inventory run <npm start> \*should navigate automatically to localhost:13000
+6. in SupraApp/inventory run <npm start> \*should navigate automatically to localhost:13000
 
 ### Starter User Profiles to Use on Login
 

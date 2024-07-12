@@ -10,7 +10,7 @@ function Login(props) {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:13000/profiles");
+      const response = await fetch("http://localhost:13000/users");
       if (response.ok) {
         const data = await response.json();
         setProfiles(data);
@@ -32,7 +32,7 @@ function Login(props) {
 
       <div className="login-container">
         <VisitorEntrance />
-        <MgmtEntrance isVisitor={isVisitor} />
+        <MgmtEntrance isVisitor={isVisitor} profiles={profiles} />
         <CreateUser
           setProfiles={setProfiles}
           handleProfileCreated={handleProfileCreated}

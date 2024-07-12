@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 function MgmtEntrance(props) {
   const navigate = useNavigate();
+  const profiles = props.profiles;
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [profiles, setProfiles] = useState("");
+  // const [profiles, setProfiles] = useState("");
 
   useEffect(() => {
     // Fetch profiles from the API
@@ -15,7 +16,7 @@ function MgmtEntrance(props) {
       try {
         const response = await fetch("http://localhost:13000/users");
         const data = await response.json();
-        setProfiles(data);
+        profiles(data);
       } catch (error) {
         console.error("Error fetching initial users:", error);
       }
